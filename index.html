@@ -1,35 +1,114 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Sample Deployment</title>
-  <style>
-    body {
-      color: #000000;
-      background-color: #ffffff;
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-    }
-    
-    h1 {
-      font-size: 500%;
-      font-weight: normal;
-      margin-bottom: 0;
-    }
-    
-    h2 {
-      font-size: 200%;
-      font-weight: normal;
-      margin-bottom: 0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santa Welcomes You!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #D32F2F; /* Red background */
+            color: white;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #FFCDD2; /* Light red/pink background */
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            display: inline-block;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #4CAF50; /* Green text */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        p {
+            font-size: 1.5em;
+            color: #1A237E; /* Dark blue text */
+        }
+
+        .santa-img {
+            width: 150px;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #4CAF50; /* Green button */
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+
+        .snowflake {
+            position: absolute;
+            color: white;
+            font-size: 1.5em;
+            user-select: none;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+    </style>
 </head>
 <body>
-  <div align="center">
-    <h1>Congratulations!</h1>
-    <h2>I am 24_RP2024-M017889(Santha Kumar S) </h2>
-    <p>For next steps, read the AWS CodePipeline Documentation.</p>
-  </div>
+    <div class="container">
+        <h1>🎅 Santha kumar Welcomes You! 🎄</h1>
+        <p>Ho Ho Ho! Merry Christmas and Happy Holidays!</p>
+        <img src="https://www.freeiconspng.com/uploads/santa-claus-png-image-5a3a185163cda0.8876383315137920391407.png" alt="Santa Claus" class="santa-img">
+        <br>
+        <a href="#" class="button">Get Your Gift!</a>
+    </div>
+
+    <!-- Snowflakes -->
+    <div class="snowflakes">
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+    </div>
+
+    <script>
+        // Function to create snowflakes
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.innerHTML = '❅';
+            snowflake.style.left = Math.random() * 100 + 'vw';
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+            document.body.appendChild(snowflake);
+
+            setTimeout(() => {
+                snowflake.remove();
+            }, 5000);
+        }
+
+        setInterval(createSnowflake, 300);
+    </script>
 </body>
 </html>
-
